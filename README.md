@@ -70,8 +70,9 @@ Raw PBP JSON files (~400 MB) are excluded from the repo.
 The stints CSVs in this repo cover all games played up to the last push. To pull in new games:
 
 ```bash
+git pull                             # grab any stints already pushed by the repo owner
 pip install nba_api
-python update_stints.py              # fetches any new games for the current season
+python update_stints.py              # fetches any new games not yet in the repo
 python update_stints.py --season 2025  # explicit season
 python update_stints.py --dry-run   # preview what would be fetched
 ```
