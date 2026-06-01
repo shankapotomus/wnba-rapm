@@ -65,6 +65,19 @@ MIN_POSS     = 200                 # minimum possessions to appear in output
 
 Raw PBP JSON files (~400 MB) are excluded from the repo.
 
+## Updating stints data (new games)
+
+The stints CSVs in this repo cover all games played up to the last push. To pull in new games:
+
+```bash
+pip install nba_api
+python update_stints.py              # fetches any new games for the current season
+python update_stints.py --season 2025  # explicit season
+python update_stints.py --dry-run   # preview what would be fetched
+```
+
+The script hits `stats.nba.com` (free, no API key) to get play-by-play, parses possessions, and appends new rows to both stints CSVs. Then re-run the notebook to update RAPM.
+
 ## Output
 
 The notebook saves results to `wnba_data/rapm_and_4f_output.csv` — one row per qualifying player with RAPM, reconstructed RAPM, residual, and all eight factor rates.
