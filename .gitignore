@@ -1,0 +1,5 @@
+wnba_data/raw_pbp/
+.claude/
+__pycache__/
+*.pyc
+.env
